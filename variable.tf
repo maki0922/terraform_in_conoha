@@ -2,6 +2,7 @@ variable "general_setting" {
   type = "map"
 
   default = {
+    vps_hostname = "azuki-vps"
     path_pub_key = "~/.ssh/id_rsa.pub"
     path_secret_key = "~/.ssh/id_rsa"
     auth_url = "https://identity.tyo2.conoha.io/v2.0"

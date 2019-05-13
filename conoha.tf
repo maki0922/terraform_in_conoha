@@ -11,6 +11,7 @@ data "template_file" "user_data" {
     out_rootpassword = "${var.VPS_MY_ROOT_PASSWD}"
     out_username = "${var.VPS_MY_USERNAME}"
     out_password = "${var.VPS_MY_PASSWD}"
+    out_hostname = "${lookup(var.general_setting, "vps_hostname")}"
     out_id_rsa = "${file(lookup(var.general_setting, "path_secret_key"))}"
     out_pub_key = "${file(lookup(var.general_setting, "path_pub_key"))}"
   }
@@ -65,7 +66,6 @@ resource "openstack_compute_instance_v2" "deploy_basic_instance" {
   key_pair    = "terraform-keypair"
 
   security_groups = [
-#    "gncs-ipv4-all",
     "azuki_sec_group",
   ]
 
