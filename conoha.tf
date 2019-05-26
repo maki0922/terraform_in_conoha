@@ -61,7 +61,8 @@ resource "openstack_networking_secgroup_rule_v2" "azuki_secgroup_rule04" {
 
 resource "openstack_compute_instance_v2" "deploy_basic_instance" {
   name        = "azuki-vps"
-  image_id    = "${lookup(var.conoha_config, "image_id")}"
+  #image_id    = "${lookup(var.conoha_config, "image_id")}"
+  image_name    = "${lookup(var.conoha_config, "image_name")}"
   flavor_id = "${lookup(var.conoha_config, "flavor_id")}"
   key_pair    = "terraform-keypair"
 
