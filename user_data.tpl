@@ -47,8 +47,8 @@ systemctl restart sshd.service
 # Package upgrade
 #####
 apt update
-apt install python-pip
-pip install ansible
+apt install python-pip -y
+pip install ansible -y
 
 # Extra
 #####
